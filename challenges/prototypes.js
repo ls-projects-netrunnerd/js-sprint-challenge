@@ -55,3 +55,33 @@ const cuboid = new CuboidMaker({
 
 console.log(cuboid.volume()); // 100
 console.log(cuboid.surfaceArea()); // 130
+
+// CubeMaker
+
+function CubeMaker(c) {
+  CuboidMaker.call(this, c);
+}
+
+CubeMaker.prototype.volume = function () {
+  const l = this.length,
+        w = this.width,
+        h = this.height;
+
+  return l * w * h;
+}
+
+CubeMaker.prototype.surfaceArea = function () {
+  const l = this.length,
+        w = this.width;
+
+  return 6 * l * w;
+}
+
+const cube = new CubeMaker({
+  length: 4,
+  width: 4,
+  height: 4
+});
+
+console.log(cube.volume());
+console.log(cube.surfaceArea());
